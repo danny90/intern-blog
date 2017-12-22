@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <h1 class="display-3">Awesome Blog</h1>
+  <p class="lead">This is where all the articles are.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="article/new" role="button">Create New Article</a>
+  </p>
+</div>
+
+<div class="container">
+  <% @articles.each do |collection| %>
+    <div class="row mb-5">
+      <% collection.each do |article| %>
+        <div class="col-md-4">
+          <%= link_to article do %>
+            <div class="card">
+              <img class="card-img-top" src="<%= article.image %>" alt="Card image cap">
+              <div class="card-block p-3">
+                <h4 class="card-title"><%= article.title %></h4>
+                <p class="card-text"><%= article.body.truncate(150) %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

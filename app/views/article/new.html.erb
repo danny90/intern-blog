@@ -1,0 +1,22 @@
+<div class="col-md-6">
+  <div class="card">
+    <div class="card-block p-5">
+      <h3 style="text-align: center">New Article</h3>
+      <%= form_for @article, url: {action: "create"} do |f| %>
+        <%= f.label "Image url" %>
+        <%= f.text_field :image, class: 'form-control' %>
+
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+
+        <%= f.label :body %>
+        <%= f.text_area :body, class: 'form-control', rows: 7 %>
+
+        <%= f.submit "Create", class: "btn btn-primary", style: "margin-top: 20px;" %>
+      <% end %>
+      <div style="text-align: right">
+        <%= link_to 'Back to Home', :action => 'index' %>
+      </div>
+    </div>
+  </div>
+</div>
